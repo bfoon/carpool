@@ -9,7 +9,7 @@
 
 
     var data = {
-        labels: ['facebook', 'twitter', 'youtube', 'google plus'],
+        labels: ['UNDP 1 CD', 'UNDP 3 CD', 'UNDP 5 CD', 'UNDP 34 TA'],
         series: [{
                 value: 20,
                 className: "bg-facebook"
