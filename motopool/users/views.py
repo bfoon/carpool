@@ -32,3 +32,7 @@ def logout(request):
 @login_required(login_url='login')
 def dashboard(request):
     return render(request, "users/dashboard.html")
+
+@login_required(login_url='login')
+def users(request):
+    return render(request, "users/users-table.html")
