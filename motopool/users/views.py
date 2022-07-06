@@ -35,4 +35,8 @@ def dashboard(request):
 
 @login_required(login_url='login')
 def users(request):
-    return render(request, "users/users-table.html")
+    usr = User.objects.all()
+    context = {
+        'usr': usr,
+    }
+    return render(request, "users/users-table.html", context)
