@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'myapp',
+    'vehicles',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +82,7 @@ WSGI_APPLICATION = 'motopool.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'motopool',
+        'NAME': 'coupon',
         'USER': 'postgres',
         'PASSWORD': 'dazzling@123',
         'HOST': 'localhost',

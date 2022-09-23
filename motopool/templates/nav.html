@@ -22,18 +22,18 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Admin <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="#">Vehicles</a></li>
+                            <li><a href="/vehicles/vehicle_list">Vehicles</a></li>
                             <li><a href="#">User Groups</a></li>
                             <li><a href="#">Units</a></li>
-                            <li><a href="#">User</a></li>
+                            <li><a href="/users">User</a></li>
                             <li><a href="#">Locations</a></li> <!-- This is the location of to and froms to help the map location -->
-                            <li><a href="#">Approvers</a></li>
+                            <li><a href="/approvers">Approvers</a></li>
                             <li><a href="#">Settings</a></li>
                         </ul>
                     </li>
                     <li><a href="#"><i class="ti-calendar"></i> Vehicles Management</a></li>
                     <li><a href="#"><i class="ti-email"></i> All Requests</a></li>
-                    <li><a href="/users"><i class="ti-user"></i> Drivers</a></li>
+                    <li><a href="/drivers"><i class="ti-user"></i> Drivers</a></li>
                     <li><a href="#"><i class="ti-layout-grid2-alt"></i> Map Locations</a></li>
                     <li class="label">Features</li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Time Management <span
@@ -275,7 +275,7 @@
                         </div>
                         <div class="dropdown dib">
                             <div class="header-icon " data-toggle="dropdown">
-                                <span class="user-avatar"> John
+                                <span class="user-avatar"> {{user.first_name}} {{user.last_name}}
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                                 <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
@@ -327,7 +327,17 @@
             </div>
         </div>
     </div>
-
+ <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1>Hello, <span>{{user.first_name}} {{user.last_name}}</span></h1>
+                            </div>
+                        </div>
+                    </div>
 {% block content %}
 
 {% endblock %}

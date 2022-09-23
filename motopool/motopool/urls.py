@@ -22,4 +22,5 @@ import os
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls'), name='users'),
+    path('vehicles/', include('vehicles.urls'), name='vehicles'),
 ]

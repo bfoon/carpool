@@ -1,13 +1,14 @@
 {% include 'base.html' %}
 {% block content %}
 {% load static %}
+
                     <!-- /# column -->
                     <div class="col-lg-4 p-l-0 title-margin-left">
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">Users List</li>
+                                    <li class="breadcrumb-item active">Vehicle List</li>
                                 </ol>
                             </div>
                         </div>
@@ -20,7 +21,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>All Users List </h4>
+                                    <h4>Vehicles </h4>
                                     
                                 </div>
                                 <div class="card-body">
@@ -29,32 +30,33 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Status</th>
-                                                    <th>last login</th>
+                                                    <th>Vehicle Number</th>
+                                                    <th>Unit</th>
+                                                    <th>Driver</th>
+                                                    <th>Model</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                            {% for u in usr %}
-                                                <tr>
 
-                                                    <th scope="row">{{forloop.counter}}</th>
-                                                    <td>{{u.fname}} {{u.lname}}</td>
-                                                    {% if u.status == "active" %}
-                                                    <td><span class="badge badge-primary">{{u.status}}</span></td>
-                                                    {% else %}
-                                                    <td><span class="badge badge-danger">{{u.status}}</span></td>
-                                                    {% endif %}
-                                                    <td>{{u.user.last_login}}</td>
+                                            <tbody>
+                                               {% for v in vehicle %}
+                                                <tr>
+                                                    <th scope="row">{{ forloop.counter }}</th>
+                                                    <td>{{v.vnum}}</td>
+
+                                                    <td><span class="badge badge-primary">{{v.asunit}}</span></td>
+                                                    <td>{{v.driver.fname}} {{v.driver.lname}}</td>
+                                                    <td>{{v.vtype}}</td>
                                                     <td>
-                                                        <a href="#/{{u.id}}"><i class="fa fa-eye color-info mx-1"></i></a>
-                                                        <a href="#/{{u.id}}"><i class="fa fa-pencil color-primary mx-1"></i></a>
-                                                        <a href="#/{{u.id}}"><i class="fa fa-trash color-danger"></i></a>
+                                                        <a href="#/{{d.id}}" class="mx-1"><i class="fa fa-eye color-info"></i></a>
+                                                        <a href="#/{{d.id}}" class="mx-1"><i class="fa fa-pencil color-primary"></i> </a>
+                                                        <a href="#/{{d.id}}"><i class="fa fa-trash color-danger"></i> </a>
                                                     </td>
+
                                                 </tr>
                                             {% endfor %}
                                             </tbody>
+
                                         </table>
                                     </div>
                                 </div>
